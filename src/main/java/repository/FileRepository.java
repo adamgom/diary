@@ -64,25 +64,13 @@ public class FileRepository implements IRepository {
 	
 	private Bean loadBean(Long date) {
 		Bean bean = null;
-		ObjectInputStream objectInputStream = null;
-		try {
-			objectInputStream = new ObjectInputStream(new FileInputStream(dataDir.getAbsolutePath() + "/" + dTS(date)));
-			try {
+		try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(dataDir.getAbsolutePath() + "/" + dTS(date)))) {
 				bean = (Bean)objectInputStream.readObject();
 //				bean = new Bean().readExternal(objectInputStream.readObject());
 //				bean.setDate((Bean)objectInputStream.readObject().getClass().);
-			} catch (ClassNotFoundException e) {
+			} catch (ClassNotFoundException | IOException e) {
 				e.printStackTrace();
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				objectInputStream.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			} 
-		}
 		return bean;
 	}
 	
