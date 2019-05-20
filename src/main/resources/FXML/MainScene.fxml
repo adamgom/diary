@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox alignment="CENTER" prefWidth="600.0" spacing="10.0" style="-fx-border-color: red; -fx-border-radius: 10;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Data:" />
+            <Label fx:id="labelDate" alignment="CENTER" text="DATA" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets right="100.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></Label>
+            <Label text="Użytkownik">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label fx:id="labelUser" minWidth="160.0" text="Proszę się zalogować">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER" spacing="30.0" style="-fx-border-color: green; -fx-border-radius: 10;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="buttonLogin" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Zaloguj" />
+            <Button fx:id="buttonNewEntry" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Nowy wpis" />
+            <Button fx:id="buttonOption" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Opcje" />
+            <Button fx:id="buttonExit" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Wyjście" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <center>
+      <StackPane fx:id="centralStackPane" prefHeight="300.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
