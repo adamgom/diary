@@ -6,15 +6,19 @@ import static main.Commend.REMOVE;
 import static main.Commend.GETALL;
 import static main.Commend.GET;
 import java.util.Calendar;
+
+import gui.controllers.ViewController;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.control.Label;
 import javafx.util.Duration;
+import main.Engine.ActionParameter;
 import main.exeptions.UnknownCommendExeption;
 
 public class Engine {
 	private static Engine instance;
+	private ViewController viewController;
 		
 	private Engine() {
 	}
@@ -71,6 +75,16 @@ public class Engine {
 		clock.setCycleCount(Animation.INDEFINITE);
 		clock.play();
 	}
+
+	public ViewController getViewController() {
+		return viewController;
+	}
+
+	public void setViewController(ViewController viewController) {
+		this.viewController = viewController;
+	}
+	
+	
 
 //	public static class CommendParameter {
 //	private String name;

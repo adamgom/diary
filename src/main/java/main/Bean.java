@@ -5,7 +5,7 @@ import java.io.Externalizable;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
-
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -16,6 +16,7 @@ import javax.json.JsonObject;
 import javax.json.JsonObjectBuilder;
 
 public class Bean implements Externalizable {
+	private static final long serialVersionUID = 6529685098267757690L;
 	private String title;
 	private String content;
 	private Date date;

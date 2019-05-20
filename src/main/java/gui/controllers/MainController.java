@@ -33,6 +33,7 @@ public class MainController {
 		this.isOption = false;
 		this.isLoged = false;
 		this.viewController = new ViewController(this);
+		Engine.getInstance().setViewController(viewController);
 		this.newEntryController = new NewEntryController(viewController);
 	}
 	
@@ -53,7 +54,7 @@ public class MainController {
 		Screens.VIEW.loadFXML();
 		
 		setPane(Screens.INITIAL.getPane());
-		login();
+//		login();
 	}
 
 	private void option() {
@@ -84,17 +85,17 @@ public class MainController {
 	
 	private void login() {
 		if (!isLoged) {
-			this.labelUser.setText("Zalogowano");
-			this.buttonLogin.setText("Wyloguj");
-			this.buttonNewEntry.setDisable(false);
+			labelUser.setText("Zalogowano");
+			buttonLogin.setText("Wyloguj");
+			buttonNewEntry.setDisable(false);
 			setPane(Screens.VIEW.getPane());
 		} else {
-			this.labelUser.setText("Proszê siê zalogowaæ");
-			this.buttonLogin.setText("Zaloguj");
-			this.buttonNewEntry.setDisable(true);
+			labelUser.setText("Proszê siê zalogowaæ");
+			buttonLogin.setText("Zaloguj");
+			buttonNewEntry.setDisable(true);
 			setPane(Screens.INITIAL.getPane());
 		}
-		this.isLoged = !isLoged;
+		isLoged = !isLoged;
 		isOption = false;
 	}
 	

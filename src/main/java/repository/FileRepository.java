@@ -45,8 +45,9 @@ public class FileRepository implements IRepository {
 
 	@Override
 	public void remove(Long date) {
-		File file = new File(dataDir.getName() + "/" + dTS(date));
-		file.delete();
+//		File file = new File(dataDir.getName() + "/" + dTS(date));
+//		file.delete();
+		new File(dataDir.getAbsolutePath() + "/" + dTS(date)).delete();
 	}
 
 	@Override
